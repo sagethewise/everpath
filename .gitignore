@@ -1,0 +1,22 @@
+@"
+
+# Credentials
+.env
+.env.*
+!.env.example
+
+# Dependencies and builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local API data and cache
+imports/
+src/data/blizzard-import.json
+src/data/blizzard-recipes.json
+src/data/blizzard-pets.json
+src/data/material-media.json
+
+# Local acquisition records
+src/data/acquisition.json
+"@ | Add-Content .gitignore

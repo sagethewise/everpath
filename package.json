@@ -1,0 +1,38 @@
+{
+  "name": "everpath",
+  "version": "1.5.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "data:blizzard": "node scripts/sync-blizzard.mjs",
+    "check": "npm run test && npm run build",
+    "api:probe": "node --env-file=.env scripts/probe-blizzard.mjs",
+    "api:fixtures": "node scripts/probe-blizzard.mjs --dry-run",
+    "api:import": "node --env-file=.env scripts/import-blizzard.mjs",
+    "api:recipes": "node --env-file=.env scripts/import-recipes.mjs",
+    "api:pets": "node --env-file=.env scripts/import-pets.mjs",
+    "api:sync": "npm run api:import && npm run api:recipes && npm run api:pets && npm run api:materials",
+    "api:materials": "node --env-file=.env scripts/import-material-media.mjs",
+    "data:validate-acquisition": "node scripts/validate-acquisition.mjs",
+    "api:foreverdb:stage": "node --env-file=.env scripts/stage-foreverdb.mjs",
+    "data:review-sources": "node scripts/review-source-candidates.mjs"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "lucide-react": "^0.468.0",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.9.0",
+    "vite": "^6.3.0",
+    "@types/leaflet": "^1.9.21"
+  }
+}
