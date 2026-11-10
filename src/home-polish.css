@@ -1,0 +1,145 @@
+/* Everpath v1.5.2 — Homepage visual fidelity.
+   This stylesheet is loaded AFTER app.css and factions.css. No API/data changes. */
+:root, [data-faction="alliance"]{
+ --ui-gold:#e8b766;--ui-gold-bright:#ffd27e;--ui-cyan:#53d4e7;
+ --ui-ink:#041927;--ui-card:#061e2d;
+}
+[data-faction="horde"]{
+ --ui-gold:#e9a773;--ui-gold-bright:#ffd09a;--ui-cyan:#df7a62;
+ --ui-ink:#1b1016;--ui-card:#231720;
+}
+/* HEADER: reference logo proportions and warm metallic active/hover nav */
+.everpath-shell .topbar{z-index:20;background:linear-gradient(105deg,var(--f-base) 0%,var(--f-base2) 60%,var(--f-base) 100%);border-bottom:1px solid color-mix(in srgb,var(--ui-gold) 55%,transparent)}
+.everpath-shell .ep-header-inner{width:min(1720px,calc(100% - 64px));max-width:none;height:110px;gap:clamp(12px,1.3vw,26px);display:flex;align-items:center;justify-content:space-between}
+.everpath-shell .topbar .brand-button{min-width:410px;flex-shrink:0;display:block;position:relative;padding:0;border:0;outline-offset:5px;background:none;line-height:1}
+.everpath-shell .topbar .brand{display:flex;align-items:center;gap:17px;white-space:nowrap;font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:0}
+.everpath-shell .topbar .logo-mark{width:143px;height:94px;display:block;flex:none;position:relative;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
+.everpath-shell .topbar .logo-mark:before{content:none!important;display:none!important}
+.everpath-shell .topbar .logo-mark:after{content:'';position:absolute;width:1px;right:-9px;top:12px;height:70px;background:linear-gradient(180deg,transparent,var(--ui-gold) 16%,var(--ui-gold) 85%,transparent);opacity:.95;pointer-events:none}
+.everpath-shell .topbar .logo-mark .ep-monogram{display:block;object-fit:contain;object-position:center;width:143px;height:94px;filter:none;max-width:none}
+.everpath-shell .topbar .brand-word{display:inline-flex;gap:0;align-items:baseline;font-family:Georgia,'Times New Roman',serif;font-size:clamp(29px,2.55vw,51px);line-height:1.1;text-shadow:0 2px 3px #000,0 0 17px #071621}
+.everpath-shell .topbar .brand-ever{color:#5ad3e7}.everpath-shell .topbar .brand-path{color:#f7be60}
+[data-faction="horde"] .everpath-shell .topbar .brand-ever{color:#e6a6a1}
+.everpath-shell .topbar .brand-subline{position:absolute;left:163px;top:76px;font-size:9px;letter-spacing:4.3px;color:#e3eaf0;font-weight:800;white-space:nowrap;line-height:1}
+.everpath-shell .desktop-nav{display:flex;flex:1;min-width:0;justify-content:center;gap:clamp(5px,.65vw,14px);margin:0}
+.everpath-shell .desktop-nav .nav-link{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px clamp(10px,1.1vw,19px);font-size:clamp(13px,.97vw,18px);font-weight:650;color:#e4eaf0;border:1.5px solid transparent;border-radius:10px;background:transparent;box-shadow:none;transition:background .22s ease,border-color .22s ease,color .22s ease,box-shadow .22s ease,transform .22s ease}
+.everpath-shell .desktop-nav .nav-link::after{display:none!important}
+.everpath-shell .desktop-nav .nav-link:hover,
+.everpath-shell .desktop-nav .nav-link.active{color:#ffe6b8;border-color:var(--ui-gold);background:linear-gradient(180deg,rgba(181,126,48,.45) 0%,rgba(99,69,32,.38) 47%,rgba(32,31,28,.78) 100%);box-shadow:inset 0 1px 0 #ffde9a80,inset 0 0 15px #dcb2642e,0 0 14px #e6ad5340;text-shadow:0 0 7px #f6cc7e77}
+.everpath-shell .desktop-nav .nav-link:hover{transform:translateY(-1px)}
+.everpath-shell .desktop-nav .nav-link svg{width:23px;height:23px;stroke-width:2.3;flex:none}
+.everpath-shell .head-actions{flex-shrink:0;display:flex;align-items:center;gap:9px}
+.everpath-shell .header-action{width:41px;height:43px;transition:color .2s ease,background .2s ease;cursor:pointer;border-radius:8px}
+.everpath-shell .header-action:hover{background:#d5ab5a18;color:var(--ui-gold-bright)}
+.everpath-shell .faction-switch{border-radius:11px}
+/* HERO: reveal artwork but preserve a legible left-side text scrim */
+.everpath-shell .ep-home{max-width:none;margin:auto;background:radial-gradient(ellipse at 58% 96%,color-mix(in srgb,var(--f-panel-hover) 68%,transparent),transparent 68%)}
+.everpath-shell .cinematic-hero{min-height:425px;background-image:linear-gradient(90deg,var(--f-base) 0%,color-mix(in srgb,var(--f-base) 94%,transparent) 16%,color-mix(in srgb,var(--f-base) 63%,transparent) 37%,transparent 69%),linear-gradient(0deg,var(--f-base) 0%,transparent 24%),var(--f-page-image);background-size:cover;background-position:center,center,center 46%}
+.everpath-shell .cinematic-hero__inner{width:min(1600px,calc(100% - 110px));padding:54px 0 54px;margin:0 auto}
+.everpath-shell .cinematic-copy{max-width:735px}
+.everpath-shell .cinematic-eyebrow{font-size:12px;letter-spacing:5px;margin-bottom:14px;color:var(--ui-gold-bright)}
+.everpath-shell .cinematic-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(45px,4.1vw,71px);line-height:1.035;letter-spacing:-2px;margin:0 0 14px;color:#fff0d1;text-shadow:0 3px 9px #001321aa}
+.everpath-shell .cinematic-copy h1 span{color:#f7c675}
+[data-faction="horde"] .everpath-shell .cinematic-copy h1 span{color:#ffbb88}
+.everpath-shell .cinematic-copy p{font-size:clamp(17px,1.34vw,23px);line-height:1.36;margin:0 0 24px;max-width:540px;color:#e2eaf0}
+.everpath-shell .cinematic-actions{gap:18px}
+.everpath-shell .cinematic-btn{border-radius:11px;min-height:66px;display:inline-flex;justify-content:center;gap:13px;font-size:clamp(15px,1.05vw,19px);padding:14px 25px;box-shadow:inset 0 1px 0 #ffffff75,0 5px 15px #0008;transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}
+.everpath-shell .cinematic-btn svg:first-child{width:29px;height:29px;stroke-width:2.5}
+.everpath-shell .cinematic-btn--gold{border:2px solid #eeb347;background:linear-gradient(180deg,#9b742f,#5c3f1d 55%,#241c16 100%);box-shadow:inset 0 2px 0 #fff5b263,0 0 13px #dea44c55,0 5px 16px #0008}
+.everpath-shell .cinematic-btn--aqua{border:2px solid var(--f-highlight);background:linear-gradient(180deg,#105b6a,#0b3c50 55%,#072334);box-shadow:inset 0 2px 0 #b4fcff40,0 0 12px #2dc8dd55,0 5px 16px #0008}
+[data-faction="horde"] .everpath-shell .cinematic-btn--aqua{background:linear-gradient(180deg,#72352e,#3c2227 60%,#28161b)}
+.everpath-shell .cinematic-btn:hover{transform:translateY(-3px);filter:brightness(1.11);box-shadow:inset 0 1px 0 #fff8cb6d,0 0 24px #dfb26483,0 9px 20px #0009}
+/* CARDS: no doubled edges or clipped hexagon borders; the hex is TWO layers. */
+.everpath-shell .cinematic-features{width:min(1680px,calc(100% - 104px));gap:24px;margin:0 auto;position:relative;z-index:2}
+.everpath-shell .cinematic-feature{isolation:isolate;display:flex;align-items:center;min-height:186px;height:auto;padding:0 24px 0 0;border:1.5px solid var(--ui-gold);border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(100deg,var(--ui-card),var(--f-base) 85%);box-shadow:inset 0 0 0 1px #f3c97a11,0 10px 26px #00101977;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;cursor:pointer}
+.everpath-shell .cinematic-feature:hover{border-color:var(--ui-gold-bright);transform:translateY(-4px);box-shadow:inset 0 0 0 1px #f3c97a24,0 12px 28px #0009,0 0 18px #c6944a66}
+.everpath-shell .cinematic-feature__image{height:186px;width:35%;flex:0 0 35%;position:relative;background-size:cover;background-position:center;min-width:0}
+.everpath-shell .cinematic-feature__image:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 34%,var(--ui-card) 100%);pointer-events:none}
+.everpath-shell .cinematic-feature__icon{width:74px;height:74px;flex:0 0 74px;display:grid;place-items:center;margin-left:-47px;position:relative;z-index:3;isolation:isolate;border:0!important;clip-path:none!important;background:transparent!important;overflow:visible;color:#9de5ed}
+.everpath-shell .cinematic-feature__icon::before,.everpath-shell .cinematic-feature__icon::after{content:'';position:absolute;clip-path:polygon(50% 0,95% 24%,95% 76%,50% 100%,5% 76%,5% 24%);pointer-events:none}
+.everpath-shell .cinematic-feature__icon::before{inset:0;background:var(--ui-gold);filter:none;z-index:-2}
+.everpath-shell .cinematic-feature__icon::after{inset:3px;background:#062333;z-index:-1}
+[data-faction="horde"] .everpath-shell .cinematic-feature__icon::after{background:#2b1821}
+.everpath-shell .cinematic-feature__icon svg{position:relative;z-index:1;width:32px;height:32px;color:#a1ecfa;stroke-width:2.1}
+.everpath-shell .cinematic-feature--pets .cinematic-feature__icon svg{color:#ffd57d}
+.everpath-shell .cinematic-feature__copy{flex:1;min-width:0;margin-left:21px;position:relative;z-index:2;padding:18px 0}
+.everpath-shell .cinematic-feature__copy strong{font-family:Georgia,'Times New Roman',serif;font-size:clamp(22px,1.7vw,32px);line-height:1.18;letter-spacing:-.5px;color:#fff2dc;margin-bottom:12px}
+.everpath-shell .cinematic-feature__copy small{font-size:clamp(12px,1vw,17px);line-height:1.48;color:#e3edf3}
+.everpath-shell .cinematic-feature__arrow{flex:none;display:grid;place-items:center;width:46px;height:46px;margin-left:10px;padding:0;border:1.5px solid var(--ui-gold);border-radius:9px;background:linear-gradient(145deg,#403021,#1b2024);box-shadow:inset 0 1px 0 #f4bf7b40;color:#ffd17e}
+.everpath-shell .cinematic-feature:hover .cinematic-feature__arrow{background:linear-gradient(145deg,#805b28,#30271c)}
+.everpath-shell .cinematic-benefits{margin:27px auto 0}
+/* The smaller screens retain readable titles, controls, and card artwork. */
+@media(max-width:1580px){
+ .everpath-shell .ep-header-inner{width:calc(100% - 42px);gap:12px}
+ .everpath-shell .topbar .brand-button{min-width:335px}
+ .everpath-shell .topbar .logo-mark{width:104px;height:78px}
+ .everpath-shell .topbar .logo-mark .ep-monogram{width:104px;height:78px}
+ .everpath-shell .topbar .logo-mark:after{height:58px;top:10px;right:-7px}
+ .everpath-shell .topbar .brand{gap:13px}
+ .everpath-shell .topbar .brand-word{font-size:clamp(27px,2.45vw,41px)}
+ .everpath-shell .topbar .brand-subline{left:122px;top:72px;font-size:8px;letter-spacing:2.6px}
+ .everpath-shell .desktop-nav .nav-link{padding:10px 11px;font-size:14px}
+ .everpath-shell .head-actions{gap:4px}
+}
+@media(max-width:1220px){
+ .everpath-shell .topbar .brand-button{min-width:285px}
+ .everpath-shell .topbar .brand-word{font-size:29px}
+ .everpath-shell .desktop-nav .nav-link{font-size:12px;gap:6px;padding:10px 7px}
+ .everpath-shell .desktop-nav .nav-link svg{width:18px;height:18px}
+ .everpath-shell .head-actions .header-action{display:none}
+ .everpath-shell .faction-option span{display:none}
+}
+@media(max-width:980px){
+ .everpath-shell .ep-header-inner{height:86px;width:calc(100% - 30px)}
+ .everpath-shell .desktop-nav{display:none}
+ .everpath-shell .topbar .brand-button{min-width:0}
+ .everpath-shell .topbar .brand-word{font-size:34px}
+ .everpath-shell .topbar .brand-subline{top:63px}
+ .everpath-shell .menu-btn{display:grid}
+ .everpath-shell .mobile-nav{background:var(--f-base2);border-bottom:1px solid var(--f-stroke)}
+ .everpath-shell .cinematic-hero__inner{width:calc(100% - 58px)}
+ .everpath-shell .cinematic-features{width:calc(100% - 58px);grid-template-columns:1fr}
+ .everpath-shell .cinematic-feature__copy strong{font-size:27px}
+ .everpath-shell .cinematic-benefits{width:calc(100% - 58px)}
+}
+@media(max-width:600px){
+ .everpath-shell .ep-header-inner{height:75px;width:calc(100% - 20px);gap:7px}
+ .everpath-shell .topbar .logo-mark{width:70px;height:60px}
+ .everpath-shell .topbar .logo-mark .ep-monogram{width:70px;height:60px}
+ .everpath-shell .topbar .logo-mark:after{height:42px;top:9px;right:-5px}
+ .everpath-shell .topbar .brand{gap:10px}
+ .everpath-shell .topbar .brand-word{font-size:clamp(21px,5.6vw,30px)}
+ .everpath-shell .topbar .brand-subline{left:82px;top:56px;letter-spacing:1.4px;font-size:6px;display:block}
+ .everpath-shell .faction-switch{padding:2px;gap:1px}
+ .everpath-shell .faction-option{padding:7px}
+ .everpath-shell .cinematic-hero{min-height:435px;background-position:center,center,61% center}
+ .everpath-shell .cinematic-hero__inner{width:calc(100% - 34px);padding:49px 0 32px}
+ .everpath-shell .cinematic-copy h1{font-size:clamp(37px,8.4vw,51px);letter-spacing:-1.6px}
+ .everpath-shell .cinematic-copy p{font-size:16px}
+ .everpath-shell .cinematic-eyebrow{font-size:9px;letter-spacing:2.8px}
+ .everpath-shell .cinematic-actions{flex-direction:column;align-items:stretch;gap:12px}
+ .everpath-shell .cinematic-btn{font-size:14px;min-height:53px;padding:10px 14px}
+ .everpath-shell .cinematic-btn svg:first-child{width:23px;height:23px}
+ .everpath-shell .cinematic-features{width:calc(100% - 24px);gap:13px}
+ .everpath-shell .cinematic-feature{min-height:148px;padding-right:11px;border-radius:13px}
+ .everpath-shell .cinematic-feature__image{height:148px;flex:0 0 29%;width:29%}
+ .everpath-shell .cinematic-feature__icon{width:43px;height:49px;flex-basis:43px;margin-left:-28px}
+ .everpath-shell .cinematic-feature__icon::after{inset:2px}
+ .everpath-shell .cinematic-feature__icon svg{width:20px;height:20px}
+ .everpath-shell .cinematic-feature__copy{margin-left:8px;padding:10px 0}
+ .everpath-shell .cinematic-feature__copy strong{font-size:19px;margin-bottom:6px}
+ .everpath-shell .cinematic-feature__copy small{font-size:11px;line-height:1.35}
+ .everpath-shell .cinematic-feature__copy small br{display:none}
+ .everpath-shell .cinematic-feature__arrow{width:29px;height:33px;margin-left:4px;border-radius:7px}
+ .everpath-shell .cinematic-feature__arrow svg{width:16px;height:16px}
+ .everpath-shell .cinematic-benefits{width:calc(100% - 34px);grid-template-columns:1fr}
+}
+@media(max-width:400px){
+ .everpath-shell .topbar .brand-word{font-size:20px}
+ .everpath-shell .topbar .brand-subline{display:none}
+ .everpath-shell .cinematic-feature__copy strong{font-size:17px}
+ .everpath-shell .cinematic-feature__arrow{width:26px}
+}
+@media(prefers-reduced-motion:reduce){
+ .everpath-shell .desktop-nav .nav-link,.everpath-shell .cinematic-btn,.everpath-shell .cinematic-feature{transition:none!important}
+}
