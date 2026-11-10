@@ -1,0 +1,7 @@
+import type {PlanItem} from './planner';
+export interface SavedState {profession:string;skill:number;owned:string[];plan:PlanItem[];checked:string[]}
+const KEY='everpath:react:v1';
+const defaults:SavedState={profession:'alchemy',skill:1,owned:[],plan:[],checked:[]};
+export function readState():SavedState{try{const raw=localStorage.getItem(KEY);if(!raw)return {...defaults};const data:unknown=JSON.parse(raw);if(!data||typeof data!=='object')return {...defaults};const v=data as Partial<SavedState>;return {profession:typeof v.profession==='string'?v.profession:defaults.profession,skill:typeof v.skill==='number'?v.skill:1,owned:Array.isArray(v.owned)?v.owned.filter(x=>typeof x==='string'):[],plan:Array.isArray(v.plan)?v.plan.filter(x=>typeof x?.recipeId==='string'&&Number.isInteger(x.quantity)&&x.quantity>0):[],checked:Array.isArray(v.checked)?v.checked.filter(x=>typeof x==='string'):[]}}catch{return {...defaults}}}
+export function writeState(state:SavedState){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
+export function validateCollection(raw:unknown,knownIds:Set<string>):string[]{if(!raw||typeof raw!=='object')throw new Error('Invalid collection format');const obj=raw as Record<string,unknown>;if(obj.format!=='everpath-collection'||!Array.isArray(obj.owned)||obj.owned.length>10000)throw new Error('Invalid collection format');return [...new Set(obj.owned.filter((id):id is string=>typeof id==='string'&&knownIds.has(id)))]}

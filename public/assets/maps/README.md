@@ -1,0 +1,1 @@
+Map art is NOT bundled. Add only images for which you have permission to distribute and an independently verified coordinate transform. Set the matching /assets/maps/... path, width and height in src/data/acquisition.json. WoW/Blizzard images may carry separate rights from open-source addon code.

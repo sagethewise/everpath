@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "not-imported",
+  "source": "Blizzard Game Data API",
+  "region": "eu",
+  "namespace": "static-forever-eu",
+  "locale": "en_GB",
+  "importedAt": null,
+  "limited": false,
+  "discoveredRecipes": 0,
+  "professions": [],
+  "tiers": [],
+  "recipes": [],
+  "errors": [],
+  "coverage": {
+    "professions": 0,
+    "tiers": 0,
+    "recipes": 0,
+    "withMaterials": 0,
+    "missingMaterials": 0,
+    "errors": 0,
+    "limited": false
+  }
+}

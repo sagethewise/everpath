@@ -1,0 +1,11 @@
+{
+  "status": "not-imported",
+  "region": "eu",
+  "namespace": "static-forever-eu",
+  "locale": "en_GB",
+  "importedAt": null,
+  "source": "Blizzard Game Data API",
+  "professions": [],
+  "pets": [],
+  "detailChecks": []
+}
