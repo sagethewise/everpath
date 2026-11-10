@@ -19,7 +19,8 @@
     "api:materials": "node --env-file=.env scripts/import-material-media.mjs",
     "data:validate-acquisition": "node scripts/validate-acquisition.mjs",
     "api:foreverdb:stage": "node --env-file=.env scripts/stage-foreverdb.mjs",
-    "data:review-sources": "node scripts/review-source-candidates.mjs"
+    "data:review-sources": "node scripts/review-source-candidates.mjs",
+    "api:ah:probe": "node --env-file=.env scripts/probe-forever-ah.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",
