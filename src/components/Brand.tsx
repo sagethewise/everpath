@@ -1,2 +1,7 @@
-export function Mark(){return <span className="logo-mark" aria-hidden="true"><svg className="ep-monogram" viewBox="0 0 64 64" fill="none"><path d="M7 37C14 18 24 17 32 32C40 47 51 46 57 27C51 12 39 16 32 32C25 47 14 51 7 37Z" stroke="url(#epgradient)" strokeWidth="4.7" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 17V29M14 17H25M14 23H23M14 29H25" stroke="#7FE5EC" strokeWidth="2.9" strokeLinecap="round" strokeLinejoin="round"/><path d="M42 28V16H49C55 16 55 24 49 24H42" stroke="#E9BD72" strokeWidth="2.9" strokeLinecap="round" strokeLinejoin="round"/><defs><linearGradient id="epgradient" x1="6" y1="34" x2="58" y2="34"><stop stopColor="#4CC7DC"/><stop offset="0.5" stopColor="#A2E8EA"/><stop offset="1" stopColor="#DCA859"/></linearGradient></defs></svg></span>}
-export function Brand(){return <span className="brand"><Mark/><span className="brand-word"><span className="brand-ever">Ever</span><span className="brand-path">path</span></span></span>}
+/** Reference-faithful brand: preserve the supplied EP artwork rather than approximating with SVG. */
+export function Mark(){
+ return <span className="logo-mark" aria-hidden="true"><img className="ep-monogram" src="/assets/everpath-monogram.png" alt="" width={185} height={119}/></span>;
+}
+export function Brand(){
+ return <span className="brand"><Mark/><span className="brand-word"><span className="brand-ever">EVER</span><span className="brand-path">PATH</span></span></span>;
+}
